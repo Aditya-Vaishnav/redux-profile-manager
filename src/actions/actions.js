@@ -4,17 +4,12 @@ export const nameChanged = (newValue) => {
     newValue
   }
 };
+
 export const mobileChanged = (newValue) => {
 
   return {
     type: "MOB_CHANGE",
     newValue
-  }
-};
-export const submit = (data) => {
-  return {
-    type: "SUBMIT",
-    data
   }
 };
 
@@ -24,15 +19,23 @@ export const clearForm = () => {
   }
 };
 
-export const saveOrEdit = (data) => {
+export const submit = (data) => {
   return {
-    type: "SAVE_OR_EDIT",
+    type: "SUBMIT",
     data
   }
 };
-export const removeItem = (itemId) => {
+
+export const removeProfile = (itemId) => {
   return {
-    type: "REMOVE_ITEM",
+    type: "REMOVE_PROFILE",
     itemId
+  }
+};
+
+export const editProfile = (data) => {
+  return {
+    type: "EDIT_PROFILE",
+    data
   }
 };

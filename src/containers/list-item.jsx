@@ -1,16 +1,21 @@
 import React from 'react';
 import List from '../containers/list.jsx';
-import { removeItem } from '../actions/actions.js';
-import {bindActionCreators} from 'redux';
+import { removeProfile, editProfile } from '../actions/actions.js';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
 const ListItem = React.createClass ({
-   edit(){
-      console.log("editing ==>", this.props.id)
+   edit() {
+    const item = {
+      id : this.props.id,
+      name : this.props.name,
+      mobile : this.props.mob
+    }
+    this.props.editProfile(item)
    },
-   remove(){
-      this.props.removeItem(this.props.id)
+   remove() {
+      this.props.removeProfile( this.props.id )
    },
    render() {
       return (
@@ -18,20 +23,20 @@ const ListItem = React.createClass ({
            <table>
          			<tbody>
          				<tr>
-         					<th> Profile # {this.props.id + 1} </th>
+         					<th> Profile # { this.props.id + 1 } </th>
          				</tr>
          				<tr>
-         					<td>{this.props.name}</td>
+         					<td> { this.props.name } </td>
          				</tr>
-                     <tr>
-                        <td>{this.props.mob}</td>
-                     </tr>
-                     <tr>
-                        <td><button onClick = {this.edit} > Edit #{this.props.id+1}</button></td>
-                     </tr>
-                     <tr>
-                        <td><button onClick = {this.remove} > Remove #{this.props.id+1}</button></td>
-                     </tr>
+                <tr>
+                  <td> { this.props.mob } </td>
+                </tr>
+                <tr>
+                  <td>  <button onClick = { this.edit } > Edit #{ this.props.id+1 }  </button>  </td>
+                </tr>
+                <tr>
+                  <td>  <button onClick = { this.remove } > Remove #{ this.props.id+1 }  </button>  </td>
+                </tr>
          			</tbody>
          		</table>
          </div>
@@ -39,14 +44,16 @@ const ListItem = React.createClass ({
       );
    }
 });
-function mapStateToProps(state) {
+function mapStateToProps ( state ) {
     return {
+      data: state.list
     };
 }
 
-function matchDispatchToProps(dispatch) {
-    return bindActionCreators({
-      removeItem
+function matchDispatchToProps ( dispatch ) {
+    return bindActionCreators ({
+      removeProfile,
+      editProfile
     }, dispatch); 
   }
-export default connect(mapStateToProps,matchDispatchToProps)(ListItem);
+export default connect( mapStateToProps , matchDispatchToProps )( ListItem );

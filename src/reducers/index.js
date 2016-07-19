@@ -3,9 +3,9 @@ import list from './profiles-list-reducers.jsx';
 import { combineReducers } from 'redux';
 
 
-const allReducers  = combineReducers({
-	form : handleForm,
-	list
+const allReducers = combineReducers({
+  form: handleForm,
+  list
 });
 
 export default allReducers;

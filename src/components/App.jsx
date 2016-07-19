@@ -1,18 +1,18 @@
 import React from 'react';
 import Form from '../containers/form.jsx';
-import List from '../containers/list.jsx';
+import profileList from '../containers/profileList.jsx';
 
 class App extends React.Component {
   render() {
     return (
-      <table className='noStyling'>
+      <table className = 'noStyling' >
       	<tbody>
        		<tr>
        			<td> 
        				<Form/>
          		</td>
          		<td>
-         		  <List/>
+         		  <profileList/>
        			</td>
        		</tr>
        	</tbody>
