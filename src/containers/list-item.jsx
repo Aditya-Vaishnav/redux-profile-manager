@@ -1,5 +1,4 @@
 import React from 'react';
-import List from '../containers/list.jsx';
 import { removeProfile, editProfile } from '../actions/actions.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

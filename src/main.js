@@ -5,8 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import allReducers from './reducers/index.jsx';
-
+import allReducers from './reducers/index.js';
 
 const logger = createLogger();
 /*(store) => (next) => (action) => {

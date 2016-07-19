@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../containers/form.jsx';
-import profileList from '../containers/profileList.jsx';
+import ProfileList from '../containers/profileList.jsx';
 
 class App extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class App extends React.Component {
        				<Form/>
          		</td>
          		<td>
-         		  <profileList/>
+         		  <ProfileList/>
        			</td>
        		</tr>
        	</tbody>

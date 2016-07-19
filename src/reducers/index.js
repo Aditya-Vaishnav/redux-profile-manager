@@ -1,5 +1,5 @@
-import handleForm from './form-reducer.jsx';
-import list from './profiles-list-reducers.jsx';
+import handleForm from './form-reducer.js';
+import list from './profiles-list-reducers.js';
 import { combineReducers } from 'redux';
 
 

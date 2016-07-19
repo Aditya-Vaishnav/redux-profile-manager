@@ -28,7 +28,7 @@ export const handleForm = (state = { name: "", mobile: "" },
         name: action.data.name,
         mobile: action.data.mobile,
         id: action.data.id
-      }) rails
+      })
 
       break
   }
